@@ -1,0 +1,15 @@
+{
+  "name": "gdocs-clone",
+  "version": "1.0.0",
+  "description": "Google Docs Clone",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "'"
+  ],
+  "author": "snipc",
+  "license": "ISC"
+}
