@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+.ql-toolbar{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(235, 240, 243);
+    border-radius: 5px;
+    width: 99%;
+}
+
+.ql-container{
+    width: 55%;
+    height: 95vh;
+    background-color:white;
+    border-radius: 5px;
+    font-family: "Work Sans";
+    font-size: 15px;
+}
+
+.quill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{
+    background-color: rgb(247, 247, 247);;
+}
