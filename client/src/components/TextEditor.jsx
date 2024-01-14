@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import '../styles/Editor.style.css';
+import {io} from 'socket.io-client'
 
 export default function TextEditor() {
+
+  useEffect(()=>{
+    const server= import.meta.env.VITE_SERVER || 'http://localhost:3001'
+    const socket = io(server)
+  },[])
+
+
 
   const formats = [
   'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
@@ -29,6 +37,7 @@ export default function TextEditor() {
     ['clean']       ]
   }
   return (
+
     <>
     <div id="editor" className='w-1'>
       <ReactQuill theme='snow' modules={modules}

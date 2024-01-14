@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Google Docs Clone",
   "main": "src/app.js",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon"
   },
   "keywords": [
     "'"
@@ -14,5 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
