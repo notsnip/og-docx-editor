@@ -11,12 +11,12 @@ export default function TextEditor() {
   const [editorData,setEditorData]= useState('');
 
   function handleChange(data){
+    console.log(data)
     webSocket.emit('send-editorData',data);
-  };``
+  };
 
   function updateEditorData(data){
-    setEditorData(data)
-
+    setEditorData(data);
   }
 
   useEffect(()=>{
@@ -49,16 +49,14 @@ export default function TextEditor() {
   
     [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
     [{ 'font': [] }],
-    [{ 'align': [] }],
-  
-    ['clean']       ]
+    [{ 'align': [] }],      ]
   }
   return (
 
     <>
     <div id="editor" className='w-1'>
       <ReactQuill theme='snow' modules={modules}
-        formats={formats} onChange={handleChange} value={editorData}/></div>
+        formats={formats} onChange={handleChange} value={editorData}  preserveWhitespace={true}/></div>
     </> 
   )
 }

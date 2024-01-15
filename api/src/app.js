@@ -9,6 +9,7 @@ io.on('connection', (socket)=>{
 
     socket.on('send-editorData',data=>{
         socket.broadcast.emit('broadcast-editorData',data)
-    })
+    });
+    
 })
 
