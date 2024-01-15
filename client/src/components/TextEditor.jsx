@@ -3,17 +3,19 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import '../styles/Editor.style.css';
 import {io} from 'socket.io-client'
+import { useParams } from "react-router-dom";
 
 
 const server= import.meta.env.VITE_SERVER || 'http://localhost:3001'
 const webSocket= io(server);
 export default function TextEditor() {
+  const {id} = useParams()
 
 
   const [editorData,setEditorData]= useState('');
 
   function handleChange(data){
-    webSocket.emit('send-editorData',data);
+    webSocket.emit('send-editorData',data,id);
   };
 
   function updateEditorData(data){
@@ -21,15 +23,13 @@ export default function TextEditor() {
   }
 
   useEffect(()=>{
+
+
+    webSocket.emit('join-document',id)
     webSocket.on('broadcast-editorData',data=>{
       setEditorData(data);
     });
   },[])
-
-
-
-
-
 
   const formats = [
   'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',

@@ -13,10 +13,10 @@ export default function Navbar() {
     <HiSave /> Save
     </Button>
     <Button color="primary" size='md'>
-      Save
+      Download
     </Button>
     <Button color="primary" size='md'>
-      Save
+      Share
     </Button>
     </div>
     </>
