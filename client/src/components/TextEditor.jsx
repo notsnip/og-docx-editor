@@ -4,14 +4,15 @@ import 'react-quill/dist/quill.snow.css';
 import '../styles/Editor.style.css';
 import {io} from 'socket.io-client'
 
+
 const server= import.meta.env.VITE_SERVER || 'http://localhost:3001'
 const webSocket= io(server);
 export default function TextEditor() {
-  
+
+
   const [editorData,setEditorData]= useState('');
 
   function handleChange(data){
-    console.log(data)
     webSocket.emit('send-editorData',data);
   };
 

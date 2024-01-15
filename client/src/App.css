@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 
+/* Fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&family=Work+Sans&display=swap');
+
+
 body{
     background-color: rgb(247, 247, 247);;
+}
+
+.font-work-sans{
+    font-family: "Work Sans";
 }
