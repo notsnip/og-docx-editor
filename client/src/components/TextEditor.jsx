@@ -15,7 +15,7 @@ export default function TextEditor() {
 
   const formats = [
   'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
-    'header','list', 'script',  'indent', 'direction','size','header','color','font','align'
+    'header','list', 'script',  'indent', 'direction','size','header','color','font','align','clean','background'
   ]
  const modules = {
     toolbar:[ ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
