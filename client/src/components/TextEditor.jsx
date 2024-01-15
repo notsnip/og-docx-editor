@@ -1,15 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import '../styles/Editor.style.css';
 import {io} from 'socket.io-client'
 
+const server= import.meta.env.VITE_SERVER || 'http://localhost:3001'
+const webSocket= io(server);
 export default function TextEditor() {
+  
+  const [editorData,setEditorData]= useState('');
+
+  function handleChange(data){
+    webSocket.emit('send-editorData',data);
+  };``
+
+  function updateEditorData(data){
+    setEditorData(data)
+
+  }
 
   useEffect(()=>{
-    const server= import.meta.env.VITE_SERVER || 'http://localhost:3001'
-    const socket = io(server)
+    webSocket.on('broadcast-editorData',data=>{
+      setEditorData(data);
+    });
   },[])
+
+
+
 
 
 
@@ -41,7 +58,7 @@ export default function TextEditor() {
     <>
     <div id="editor" className='w-1'>
       <ReactQuill theme='snow' modules={modules}
-        formats={formats}/></div>
-    </>
+        formats={formats} onChange={handleChange} value={editorData}/></div>
+    </> 
   )
 }
