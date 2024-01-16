@@ -5,7 +5,7 @@ import { HiSave } from "react-icons/hi";
 
 export default function Navbar() {
     
-  const {id} = useParams()
+  // const {id} = useParams()
   return (
     <>
     <div className='flex justify-end p-3 pt-7 gap-2 font-work-sans'>

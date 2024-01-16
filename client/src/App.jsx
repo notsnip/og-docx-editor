@@ -1,25 +1,27 @@
 import './App.css'
-import TextEditor from './components/TextEditor'
-import { v4} from 'uuid';
-import {Routes,Route, Navigate} from 'react-router-dom'
-import Navbar from './components/Navbar';
+import { v4 } from 'uuid';
+import { Routes, Route, Navigate } from 'react-router-dom'
+import ActionBar from './components/ActionBar'
+import TextEditor from './pages/EditDocument';
 
 function App() {
 
   return (
     <>
-    <Routes>
+      <Routes>
+        {/* Default Route - Redirects to New Doc page*/}
+        <Route path='/' element={<Navigate to={`/new`} />}></Route>
+        <Route path='/new' element={<Navigate to={`/docs/${v4()}`} />}></Route>
 
-      <Route path='/new' element={<Navigate to={`/docs/${v4()}`}/>}></Route>
-      <Route path='/docs/:id' element={<>
-        <Navbar/>
-      <TextEditor/>
-      </>}></Route>
-    </Routes>
-    
+        {/* Document Edit Page  */}
+        <Route path='/docs/:id' element={<>
+          <ActionBar />
+          <TextEditor />
+        </>}></Route>
 
-    <TextEditor />
-    
+      </Routes>
+      <TextEditor />
+
     </>
   )
 }
