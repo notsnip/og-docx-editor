@@ -4,7 +4,7 @@ class apiResponse{
         this.data= data;
         this.message= message;
         this.success= success;
-
     };
 };
-module.exports= apiResponse;
+export default apiResponse;
+

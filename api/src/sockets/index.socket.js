@@ -1,8 +1,10 @@
-const io = require("socket.io")(3001,{
-    cors:{
-        origin: ["http://localhost:5173", process.env.CLIENT]
-    }
-});
+import cors from 'cors';
+import { createServer } from 'http';
+import { Server } from 'socket.io';
+
+
+const httpServer = createServer();
+const io = new Server(httpServer, { cors: { origin: '*' } });
 
 io.on('connection', (socket)=>{
     console.log(`A new connection has been made: ${socket.id}`);
@@ -13,6 +15,5 @@ io.on('connection', (socket)=>{
         socket.to(documentId).emit('broadcast-editorData',data);
     });
     
-})
+});
 
-module.exports= io;
