@@ -12,6 +12,7 @@
   "author": "snipc",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "socket.io": "^4.7.4"
   },
   "devDependencies": {
