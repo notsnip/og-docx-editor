@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 
 
-mongoose.connect(`mongodb+srv://snipc:${process.env.DB_PASS}@cluster0.xqbuymk.mongodb.net/`)
+mongoose.connect(`mongodb+srv://snipc:IchigoBankai@cluster0.xqbuymk.mongodb.net/`)
 .then(() => {
   console.log("Succesfully Connected to MongoDB");
 })

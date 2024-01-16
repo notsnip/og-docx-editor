@@ -21,7 +21,7 @@ const registerUser = async (req, res) => {
     await newUser.save();
   
     // Return a success response
-    new apiResponse(201, "User registered successfully", newUser);
+    res.json(new apiResponse(201, "User registered successfully", newUser));
   };
 
 export default registerUser;
