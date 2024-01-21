@@ -1,21 +1,40 @@
-import dotenv  from "dotenv";
+import dotenv from "dotenv";
 import express from "express";
-
+import {createServer} from "http"
+import { Server } from "socket.io";
+// Config
 dotenv.config();
-const app= express()
+const app = express();
 app.use(express.json());
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }));
+
+// Import Routes
+import userRouter from "./routes/user.routes.js";
+import documentRouter from "./routes/documents.routes.js";
 
 // Connection
-import './sockets/index.socket.js';
-import './db/connection.js';
+import "./db/connection.js";
 
 //Router
-import userRouter from './routes/user.routes.js';
+app.use("/user", userRouter);
+app.use("/docs", documentRouter);
 
-
-app.use('/', userRouter);
-
-app.listen(1234, () => {
-    console.log(`Server is running on port 1234`);
+// Socket
+const httpServer = createServer(app);
+const io = new Server(httpServer, { cors: { origin: "*" } });
+io.on("connection", (socket) => {
+  console.log(`A new connection has been made: ${socket.id}`);
+  socket.on("join-document", (id) => {
+    socket.join(id);
   });
+  socket.on("send-editorData", (data, documentId) => {
+    socket.to(documentId).emit("broadcast-editorData", data);
+  });
+});
+
+app.set("port", process.env.PORT || 5000);
+
+httpServer.listen(app.get("port"), function () {
+  var port = httpServer.address().port;
+  console.log("Running on : ", port);
+});
