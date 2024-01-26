@@ -7,15 +7,19 @@ const addDocument = async (req, res) => {
     const { content, author } = req.body;
 
     if (!content) {
-      throw new apiError(400,"Content and Author are required");
+      throw new apiError(400, "Content is required");
     }
 
-    const newDocument = new docModel({ content, author });
+    const newDocument = await docModel.create({ content, author });
     await newDocument.save();
 
-    res.status(201).json(new apiResponse(201,"Document added successfully", newDocument,true));
+    res
+      .status(201)
+      .json(
+        new apiResponse(201, "Document added successfully", newDocument, true)
+      );
   } catch (error) {
-    res.status(error.status || 500).json(new apiResponse(error.message));
+    res.status(error.status || 500).json(new apiResponse(500, error.message));
   }
 };
 

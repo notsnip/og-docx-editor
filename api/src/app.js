@@ -1,27 +1,32 @@
 import dotenv from "dotenv";
 import express from "express";
-import {createServer} from "http"
+import { createServer } from "http";
 import { Server } from "socket.io";
-// Config
-dotenv.config();
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Import Routes
 import userRouter from "./routes/user.routes.js";
 import documentRouter from "./routes/documents.routes.js";
 
+// Import Middlewares
+import cors from "./middlewares/cors.middleware.js";
+
 // Connection
 import "./db/connection.js";
 
-//Router
+// Config
+dotenv.config();
+const app = express();
+app.use(cors);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Router
 app.use("/user", userRouter);
 app.use("/docs", documentRouter);
 
 // Socket
 const httpServer = createServer(app);
-const io = new Server(httpServer, { cors: { origin: "*" } });
+const io = new Server(httpServer, { cors: { origin: "http://localhost:5173" } });
 io.on("connection", (socket) => {
   console.log(`A new connection has been made: ${socket.id}`);
   socket.on("join-document", (id) => {

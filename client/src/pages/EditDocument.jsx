@@ -6,6 +6,7 @@ import { io } from "socket.io-client";
 import { useParams } from "react-router-dom";
 import ActionBar from "../components/ActionBar";
 import { API_URL } from "../utils/constants";
+import postRequest from "../utils/postRequest";
 
 const server = import.meta.env.VITE_SERVER || "http://localhost:5000";
 const webSocket = io(API_URL);
@@ -16,13 +17,20 @@ export default function TextEditor() {
 
   function handleChange(data) {
     webSocket.emit("send-editorData", data, id);
+    setEditorData(data)
   }
 
   function updateEditorData(data) {
     setEditorData(data);
   }
 
-  function saveDocument() {}
+  function saveDocumentToCloud() {
+    const postData = {
+      content: editorData,
+    };
+    postRequest(`${API_URL}/docs`, postData);
+    console.log("Saving Document...");
+  }
 
   useEffect(() => {
     webSocket.emit("join-document", id);
@@ -72,7 +80,7 @@ export default function TextEditor() {
   };
   return (
     <>
-      <ActionBar {...editorData} />
+      <ActionBar saveDocument={saveDocumentToCloud} />
       <div id="editor" className="w-1">
         <ReactQuill
           theme="snow"
