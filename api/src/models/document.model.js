@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const documentSchema = new mongoose.Schema(
   {
+    doc_id: { type: String },
     content: { type: String, required: true },
     author: { type: String, default: "Unknown" },
   },

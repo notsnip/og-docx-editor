@@ -4,13 +4,13 @@ import docModel from "../models/document.model.js";
 
 const addDocument = async (req, res) => {
   try {
-    const { content, author } = req.body;
+    const { content, author, doc_id } = req.body;
 
-    if (!content) {
-      throw new apiError(400, "Content is required");
+    if (!content || !doc_id ) {
+      throw new apiError(400, "Content and Id is required");
     }
 
-    const newDocument = await docModel.create({ content, author });
+    const newDocument = await docModel.create(req.body);
     await newDocument.save();
 
     res

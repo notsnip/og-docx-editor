@@ -8,7 +8,6 @@ import ActionBar from "../components/ActionBar";
 import { API_URL } from "../utils/constants";
 import postRequest from "../utils/postRequest";
 
-const server = import.meta.env.VITE_SERVER || "http://localhost:5000";
 const webSocket = io(API_URL);
 
 export default function TextEditor() {
@@ -26,6 +25,7 @@ export default function TextEditor() {
 
   function saveDocumentToCloud() {
     const postData = {
+      doc_id: id,
       content: editorData,
     };
     postRequest(`${API_URL}/docs`, postData);
