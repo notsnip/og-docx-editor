@@ -22,15 +22,14 @@
 
 [![OG Docs]()](https://example.com)
 
-A Google Docs inspired awesomedocs editor. Built with React, Tailwind CSS & Socket.io.
+A Google Docs inspired awesomedocs editor. Built with React, Quill, Tailwind CSS , Socket.io and MongoDB.
 
-Here's why:
+Here's what's available:
 
 - Multi user collaborative functionality using websockets and node/express backend server
 - Advanced markdown editor with features like text alignment, text sizing images, colors, list headings and many more.
 - Easily access and manage your documents (documents are saved to database)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ### Built With
 
