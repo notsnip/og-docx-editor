@@ -28,7 +28,7 @@ Here's why:
 
 - Multi user collaborative functionality using websockets and node/express backend server
 - Advanced markdown editor with features like text alignment, text sizing images, colors, list headings and many more.
-- Easily access and manage your documents from any device on your dashboard
+- Easily access and manage your documents (documents are saved to database)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -56,12 +56,13 @@ npm install
 
 ## Roadmap
 
-- [ ] Add login & signup (google auth)
-- [ ] UI additions (Footer, Navbar)
-- [ ] Homepage : Showcase created docs, with links. Docs should be sorted by date of completion
 - [ ] Skeleton and bar loading
-- [ ] Make responsive
-- [ ] Deploy (ofc!)
+- [ ] Make responsive 
+- [ ] Header
+
+### Future Plans
+- [ ] Add login & signup (google auth)
+- [ ] Homepage : Showcase created docs, with links. Docs should be sorted by date of completion
 
 <!-- CONTRIBUTING -->
 
