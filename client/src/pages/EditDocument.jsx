@@ -14,14 +14,16 @@ export default function TextEditor() {
   const { id } = useParams();
   const [editorData, setEditorData] = useState("");
 
+
+  async function getDocumentData(){
+
+  }
   function handleChange(data) {
     webSocket.emit("send-editorData", data, id);
-    setEditorData(data)
-  }
-
-  function updateEditorData(data) {
     setEditorData(data);
   }
+
+
 
   function saveDocumentToCloud() {
     const postData = {
