@@ -8,7 +8,7 @@
   <h3 align="center">OG Docs Editor</h3>
 
   <p align="center">
-    Google-Docs inspired, an awesome docs editor!
+    Google-Docs inspired, a light docx editor!
     <br />
     <a href=""><strong>Visit »</strong></a>
     <br />
