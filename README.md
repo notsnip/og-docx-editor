@@ -51,6 +51,18 @@ and `/client`
 npm install
 ```
 
+Environment variables in `api/.env`
+```
+DB_USER= MongoDB Username 
+DB_PASS= MongoDB Password
+CLIENT_URL= Client Origin (eg. example.com)
+```
+
+Environment variables in `client/.env`
+```/
+VITE_API_URL= Backend endpoint
+`````
+
 <!-- ROADMAP -->
 
 ## Roadmap
