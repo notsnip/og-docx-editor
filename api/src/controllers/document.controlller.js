@@ -67,4 +67,5 @@ const getDocument = async (req, res) => {
       .json(new apiResponse(error.status || 500, error.message));
   }
 };
+
 export { addDocument, getDocument };
