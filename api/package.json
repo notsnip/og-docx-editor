@@ -1,7 +1,7 @@
 {
-  "name": "gdocs-clone",
+  "name": "ogdocs-editor",
   "version": "1.0.0",
-  "description": "Google Docs Clone",
+  "description": "Google Docs Inspired Editor",
   "main": "src/app.js",
   "type": "module",
   "scripts": {

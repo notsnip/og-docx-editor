@@ -1,0 +1,6 @@
+- [ ] Make responsive
+- [ ] Add login & signup (google auth)
+- [ ] Homepage : Showcase created docs, with links. Docs should be sorted by date of completion
+- [ ] Skeleton and bar loading
+- [ ] UI additions (Footer, Navbar)
+- [ ] Deploy (ofc!)
