@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import ActionBar from "../components/ActionBar";
 import { API_URL } from "../utils/constants";
 import postRequest from "../utils/postRequest";
+import getRequest from "../utils/getRequest";
 
 const webSocket = io(API_URL);
 
@@ -14,16 +15,14 @@ export default function TextEditor() {
   const { id } = useParams();
   const [editorData, setEditorData] = useState("");
 
-
-  async function getDocumentData(){
-
+  async function getDocumentData() {
+    const req = await getRequest(`${API_URL}/docs/${id}`);
+    setEditorData(req.data.content);
   }
   function handleChange(data) {
     webSocket.emit("send-editorData", data, id);
     setEditorData(data);
   }
-
-
 
   function saveDocumentToCloud() {
     const postData = {
@@ -39,6 +38,8 @@ export default function TextEditor() {
     webSocket.on("broadcast-editorData", (data) => {
       setEditorData(data);
     });
+
+    getDocumentData();
   }, []);
 
   const formats = [
