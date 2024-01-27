@@ -55,7 +55,7 @@ const getDocument = async (req, res) => {
     const document = await docModel.findOne({ doc_id: id }).exec();
 
     if (!document) {
-      throw new apiError(404, "Document not found");
+      return res.json(new apiResponse(200, "No Document Data Found", {}, true));
     }
 
     res
