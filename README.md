@@ -96,7 +96,6 @@ Don't forget to give the project a star! Thanks again!
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 
@@ -106,4 +105,4 @@ Github Handle- [@realsnipc](https://github.com/realsnipc)
 
 Twiiter Handle- [@realsnipc](https://twitter.com/realsnipc)
 
-Linkedin Handle- [@realsnipc](https://linkedin.com/in/realshaurya)
+Linkedin Handle- [@realshaurya](https://linkedin.com/in/realshaurya)
