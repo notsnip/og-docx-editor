@@ -1,9 +1,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">OG Docs Editor</h3>
 
@@ -20,7 +17,8 @@
 
 ## About The Project
 
-[![OG Docs]()](https://example.com)
+[![](https://markdown-videos-api.jorgenkh.no/youtube/4KhH4bGzTUc)](https://www.youtube.com/watch?v=4KhH4bGzTUc)
+
 
 A Google Docs inspired awesomedocs editor. Built with React, Quill, Tailwind CSS , Socket.io and MongoDB.
 
