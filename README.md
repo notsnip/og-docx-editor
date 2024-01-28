@@ -38,6 +38,12 @@ Here's what's available:
 
 <!-- GETTING STARTED -->
 
+
+#### Why is the deployed project is not working?
+While I'm excited to share OG Docs with you, its current deployment on Render's free tier has limitations due to the inherent restrictions of free hosting platforms. Unfortunately, free hosting options does not offer robust websocket functionality, which is crucial for OG Docs' full potential.
+
+I'm currently unable to invest in paid hosting for the project. Therefore, I kindly request you to test OG Docs' functionalities directly on your local machine. This will allow you to experience the full range of features without the limitations of free hosting.
+
 ## Getting Started
 
 ### Prerequisites
