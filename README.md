@@ -20,7 +20,7 @@
 [![](https://markdown-videos-api.jorgenkh.no/youtube/4KhH4bGzTUc)](https://www.youtube.com/watch?v=4KhH4bGzTUc)
 
 
-A Google Docs inspired awesomedocs editor. Built with React, Quill, Tailwind CSS , Socket.io and MongoDB.
+A Google Docs inspired awesome docs editor. Built with React, Quill, Tailwind CSS , Socket.io and MongoDB.
 
 Here's what's available:
 
