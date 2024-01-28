@@ -8,7 +8,7 @@
   <h3 align="center">OG Docs Editor</h3>
 
   <p align="center">
-    Google-Docs inspired, an awesome docs editor!
+    Google-Docs inspired, a light docx editor!
     <br />
     <a href=""><strong>Visit »</strong></a>
     <br />
@@ -22,15 +22,14 @@
 
 [![OG Docs]()](https://example.com)
 
-A Google Docs inspired awesomedocs editor. Built with React, Tailwind CSS & Socket.io.
+A Google Docs inspired awesomedocs editor. Built with React, Quill, Tailwind CSS , Socket.io and MongoDB.
 
-Here's why:
+Here's what's available:
 
 - Multi user collaborative functionality using websockets and node/express backend server
 - Advanced markdown editor with features like text alignment, text sizing images, colors, list headings and many more.
-- Easily access and manage your documents from any device on your dashboard
+- Easily access and manage your documents (documents are saved to database)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ### Built With
 
@@ -52,16 +51,29 @@ and `/client`
 npm install
 ```
 
+Environment variables in `api/.env`
+```
+DB_USER= MongoDB Username 
+DB_PASS= MongoDB Password
+CLIENT_URL= Client Origin (eg. example.com)
+```
+
+Environment variables in `client/.env`
+```/
+VITE_API_URL= Backend endpoint
+`````
+
 <!-- ROADMAP -->
 
 ## Roadmap
 
-- [ ] Add login & signup (google auth)
-- [ ] UI additions (Footer, Navbar)
-- [ ] Homepage : Showcase created docs, with links. Docs should be sorted by date of completion
 - [ ] Skeleton and bar loading
-- [ ] Make responsive
-- [ ] Deploy (ofc!)
+- [ ] Make responsive 
+- [ ] Header
+
+### Future Plans
+- [ ] Add login & signup (google auth)
+- [ ] Homepage : Showcase created docs, with links. Docs should be sorted by date of completion
 
 <!-- CONTRIBUTING -->
 
@@ -84,7 +96,6 @@ Don't forget to give the project a star! Thanks again!
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 
@@ -94,4 +105,4 @@ Github Handle- [@realsnipc](https://github.com/realsnipc)
 
 Twiiter Handle- [@realsnipc](https://twitter.com/realsnipc)
 
-Linkedin Handle- [@realsnipc](https://linkedin.com/in/realshaurya)
+Linkedin Handle- [@realshaurya](https://linkedin.com/in/realshaurya)
