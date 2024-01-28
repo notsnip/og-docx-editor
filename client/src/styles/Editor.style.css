@@ -23,3 +23,14 @@
     align-items: center;
     width: 99vw;
 }
+
+@media only screen and (max-width: 600px) {
+    .ql-container{
+        width: 100vw;
+
+    }
+    .ql-toolbar{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    }
