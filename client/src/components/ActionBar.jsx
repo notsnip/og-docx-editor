@@ -1,6 +1,6 @@
 import React from "react";
 import { IoMdCloudDownload } from "react-icons/io";
-import { FaCloudflare,FaUsers } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa";
 import {
   Modal,
   ModalContent,
@@ -16,6 +16,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/react";
+import logo from '../assets/logo.png';
 
 var width = window.matchMedia("(max-width:600px)");
 export default function Navbar({ saveDocument, downloadDocument }) {
@@ -25,9 +26,9 @@ export default function Navbar({ saveDocument, downloadDocument }) {
     <>
       <div className="flex justify-between p-3 pt-4 gap-2 font-work-sans items-center ">
         <div className="flex ">
-          <Link href="https://github.com/realsnipc/og-docs-editor">
+          <Link>
             <Image
-              src="../../public/logo.png"
+              src={logo}
               height={"100px"}
               width={"40px"}
               className="ml-2"
