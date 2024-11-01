@@ -105,8 +105,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Github Handle- [@realsnipc](https://github.com/realsnipc)
-
-Twiiter Handle- [@realsnipc](https://twitter.com/realsnipc)
-
+Github Handle- [@realsnipc](https://github.com/notsnip)
+Twiiter Handle- [@realsnipc](https://twitter.com/asksnip)
 Linkedin Handle- [@realshaurya](https://linkedin.com/in/realshaurya)
